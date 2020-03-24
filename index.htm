@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!-- Ashutosh Agrawal-->
 <html lang="en">
 
 <head>
@@ -78,10 +78,29 @@
     <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
 
     <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <script src="js/loader.min.js"></script>
+    <script type="text/javascript">
+var loftloaderProProgressInit = 0.6, init = 0, percentageStyles = '';
+function loftloaderProInsertStyle( styleID, styleContent ) {
+    var style = document.createElement( 'style' );
+    style.id = styleID;
+    style.innerText = styleContent
+    document.head.appendChild( style );
+}
+if ( window.sessionStorage.getItem( 'loftloader-pro-smooth-transition' ) && ( 'on' === window.sessionStorage.getItem( 'loftloader-pro-smooth-transition' ) ) ) {
+    var onceStyles = '', initPercentage = loftloaderProProgressInit * 100;
+    init = loftloaderProProgressInit; }
+percentageStyles = '#loftloader-wrapper span.percentage:after, #loftloader-wrapper .load-count:after { content: "' + ( init * 100 ) + '%"; }';
+percentageStyles += ' #loftloader-wrapper .load-count { width: ' + ( init * 100 ) + '%; }';
+loftloaderProInsertStyle( 'loftloader-pro-progress-bar-style', '#loftloader-wrapper span.bar span.load { transform: scaleX(' + init + '); }' );
+loftloaderProInsertStyle( 'loftloader-pro-progress-percentage-style', percentageStyles );
+</script>
+    
 </head>
 
 <body>
-
+    <div id="royal_preloader"></div>
     <div class="wrapper h-card">
 
         <!-- Navigation OB-->
